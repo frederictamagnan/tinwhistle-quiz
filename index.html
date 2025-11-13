@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2c3e50">
+    <meta name="description" content="Tin Whistle Quiz - Learn and practice tin whistle fingerings">
+    <title>Tin Whistle Quiz</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <script type="module" crossorigin src="./assets/index-k5RSic-6.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-XxPyALFs.css">
+</head>
+<body>
+    <div class="app">
+        <header>
+            <h1>🎵 Tin Whistle Quiz</h1>
+            <p class="subtitle">Practice Your Fingerings</p>
+        </header>
+
+        <main>
+            <!-- Home Screen -->
+            <section id="home-screen" class="screen active">
+                <div class="mode-selection">
+                    <h2>Choose Quiz Mode</h2>
+                    <button class="mode-btn" data-mode="fingering-to-note">
+                        <span class="mode-icon">👀</span>
+                        <h3>See Fingering → Guess Note</h3>
+                        <p>You'll see the finger positions and guess which note it makes</p>
+                    </button>
+                    <button class="mode-btn" data-mode="note-to-fingering">
+                        <span class="mode-icon">🎵</span>
+                        <h3>See Note → Create Fingering</h3>
+                        <p>You'll see a note and tap the holes to create the fingering</p>
+                    </button>
+                    <button class="mode-btn" data-mode="fingering-to-staff">
+                        <span class="mode-icon">✏️</span>
+                        <h3>Fingering → Draw on Staff</h3>
+                        <p>You'll see the fingering and click where the note is on the staff</p>
+                    </button>
+                </div>
+
+                <div class="settings">
+                    <label for="key">Whistle Key:</label>
+                    <select id="key">
+                        <option value="D" selected>D Whistle</option>
+                        <option value="C">C Whistle</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Quiz Screen -->
+            <section id="quiz-screen" class="screen">
+                <div class="quiz-header">
+                    <button id="back-btn" class="icon-btn">← Back</button>
+                    <div class="score-display">
+                        <span id="score">Score: 0/0</span>
+                        <span id="streak">🔥 0</span>
+                    </div>
+                </div>
+
+                <div class="question-display">
+                    <h2 id="question-text"></h2>
+                    <div id="staff-container" class="staff-display" style="display: none;"></div>
+                    <p id="feedback-text" class="feedback"></p>
+                </div>
+
+                <section class="whistle-diagram">
+                    <div class="whistle">
+                        <div class="hole" data-hole="0">
+                            <div class="hole-circle"></div>
+                            <span class="hole-label">L1</span>
+                        </div>
+                        <div class="hole" data-hole="1">
+                            <div class="hole-circle"></div>
+                            <span class="hole-label">L2</span>
+                        </div>
+                        <div class="hole" data-hole="2">
+                            <div class="hole-circle"></div>
+                            <span class="hole-label">L3</span>
+                        </div>
+                        <div class="hole" data-hole="3">
+                            <div class="hole-circle"></div>
+                            <span class="hole-label">R1</span>
+                        </div>
+                        <div class="hole" data-hole="4">
+                            <div class="hole-circle"></div>
+                            <span class="hole-label">R2</span>
+                        </div>
+                        <div class="hole" data-hole="5">
+                            <div class="hole-circle"></div>
+                            <span class="hole-label">R3</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="answer-section">
+                    <div class="note-grid" id="note-grid">
+                        <!-- Answer buttons will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <div class="quiz-controls">
+                    <button id="submit-btn" class="submit-btn" disabled>Submit Answer</button>
+                    <button id="next-btn" class="next-btn" style="display: none;">Next Question</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p id="footer-text">Choose a quiz mode to start</p>
+        </footer>
+    </div>
+
+</body>
+</html>
